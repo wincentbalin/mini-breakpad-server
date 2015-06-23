@@ -43,7 +43,7 @@ root =
   else
     ''
 
-app.get "/#{root}", (req, res, next) ->
+app.get "/#{root}(?:index\.html?)?", (req, res, next) ->
   res.render 'index', title: 'Crash Reports', records: db.getAllRecords()
 
 app.get "/#{root}view/:id", (req, res, next) ->
